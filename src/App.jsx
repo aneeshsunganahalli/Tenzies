@@ -22,11 +22,28 @@ function App() {
   }
 
   function rollDice(){
-    setDiceState(generateAllNewDice())
+    setDiceState(oldDice => oldDice.map(die => 
+      die.isHeld?
+      die : {...die, value: Math.ceil(Math.random() * 6)}
+    ))
+  }
+
+  function hold(id){
+      setDiceState(oldDice => oldDice.map(die => 
+       die.id === id?
+        {...die, isHeld: !die.isHeld} : die
+      )
+    )
   }
 
   const diceElements = diceState.map(dieObj => 
-  <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld}/>)
+  <Die 
+    key={dieObj.id} 
+    value={dieObj.value} 
+    isHeld={dieObj.isHeld} 
+    hold={() => hold(dieObj.id)} 
+    id={dieObj.id}
+  />)
 
   return (
       <main>
