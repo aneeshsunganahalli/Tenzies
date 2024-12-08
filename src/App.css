@@ -13,6 +13,7 @@ main{
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
   gap: 22px;
+  margin-bottom: 40px;
 }
 
 .roll{
@@ -25,4 +26,18 @@ main{
   font-size: 1.2rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.title{
+  font-size: 56px;
+  margin: 0;
+  font-family: Karla, sans-serif;
+}
+
+.instructions{
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  margin-top: 0;
+  text-align: center;
+  padding: 0 20px;
 }
