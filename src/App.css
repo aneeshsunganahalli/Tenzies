@@ -3,4 +3,14 @@ main{
   height: 100%;
   border-radius: 5px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice-container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 22px;
+  row-gap: 22px;
 }
